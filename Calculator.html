@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
-
+<!DOCTYPE html>
+ 
 <html>
     <head>
         <meta charset="utf-8"/>
         <title>Калькулятор. Долгова Варвара</title>
-
+ 
         <style>
             .main
             {
@@ -15,26 +15,25 @@
                 box-shadow: 3px 3px 5px grey, -3px -3px 5px grey;
             }
             
-            .inputField
+            output
             {
                 display: flex;
                 width: 510px;
                 height: 60px;
                 border-radius: 5px;
                 margin: 20px;
-                justify-content: center;
                 align-items: center;
                 background: white;
                 box-shadow: inset 1px 1px 2px black, inset -1px -1px 2px black;
             }
-
+ 
             table
             {
                 width: 510px;
                 height: 600px;
                 margin: 20px;
             }
-
+ 
             button
             {
                 width: 100%;
@@ -43,51 +42,181 @@
                 background: white;
                 font-size: 2em;
             }
-
+            
+            p
+            {
+                text-align: right;
+                width: 510px;
+                margin: 20px;
+            }
         </style>
-
-        <script>
-
-        </script>
     </head>
     <body>
         <div class="main">
             <br>
-            <div class="inputField">
-
-            </div>
+            <output><p id="out">0</p></output>
             <table>
                 <tr>
-                    <td width=170px><button>DELETE</button></td>
-                    <td width=170px><button>-</button></td>
-                    <td width=170px><button>C</button></td>
+                    <td width=170px><button id="btnDELETE">DELETE</button></td>
+                    <td width=170px><button id="btn-">-</button></td>
+                    <td width=170px><button id="btnC">C</button></td>
                 </tr>
                 <tr>
-                    <td><button>+</button></td>
-                    <td><button>*</button></td>
-                    <td><button>&#247</button></td>
+                    <td><button id="btn+">+</button></td>
+                    <td><button id="btn*">*</button></td>
+                    <td><button id="btn/">&#247</button></td>
                 </tr>
                 <tr>
-                    <td><button>7</button></td>
-                    <td><button>8</button></td>
-                    <td><button>9</button></td>
+                    <td><button id="btn7">7</button></td>
+                    <td><button id="btn8">8</button></td>
+                    <td><button id="btn9">9</button></td>
                 </tr>
                 <tr>
-                    <td><button>4</button></td>
-                    <td><button>5</button></td>
-                    <td><button>6</button></td>
+                    <td><button id="btn4">4</button></td>
+                    <td><button id="btn5">5</button></td>
+                    <td><button id="btn6">6</button></td>
                 </tr>
                 <tr>
-                    <td><button>1</button></td>
-                    <td><button>2</button></td>
-                    <td><button>3</button></td>
+                    <td><button id="btn1">1</button></td>
+                    <td><button id="btn2">2</button></td>
+                    <td><button id="btn3">3</button></td>
                 </tr>
                 <tr>
-                    <td><button>0</button></td>
-                    <td><button></button></td>
-                    <td><button>=</button></td>
+                    <td><button id="btn0">0</button></td>
+                    <td><button id="btn"></button></td>
+                    <td><button id="btn=">=</button></td>
                 </tr>
             </table>
         </div>
+        <script>
+            let number = 0;
+            let value = 0;
+            let result = 0;
+            let last_action = "";
+
+            document.getElementById("btn0").addEventListener("click", function()
+            {
+                value = value*10 + 0;
+                document.getElementById("out").innerHTML = value;
+            });
+            document.getElementById("btn1").addEventListener("click", function()
+            {
+                value = value*10 + 1;
+                number = 1;
+                document.getElementById("out").innerHTML = value;
+            });
+            document.getElementById("btn2").addEventListener("click", function()
+            {
+                value = value*10 + 2;
+                number = 2;
+                document.getElementById("out").innerHTML = value;
+            });
+            document.getElementById("btn3").addEventListener("click", function()
+            {
+                value = value*10 + 3;
+                number = 3;
+                document.getElementById("out").innerHTML = value;
+            });
+            document.getElementById("btn4").addEventListener("click", function()
+            {
+                value = value*10 + 4;
+                number = 4;
+                document.getElementById("out").innerHTML = value;
+            });
+            document.getElementById("btn5").addEventListener("click", function()
+            {
+                value = value*10 + 5;
+                number = 5;
+                document.getElementById("out").innerHTML = value;
+            });
+            document.getElementById("btn6").addEventListener("click", function()
+            {
+                value = value*10 + 6;
+                number = 6;
+                document.getElementById("out").innerHTML = value;
+            });
+            document.getElementById("btn7").addEventListener("click", function()
+            {
+                value = value*10 + 7;
+                number = 7;
+                document.getElementById("out").innerHTML = value;
+            });
+            document.getElementById("btn8").addEventListener("click", function()
+            {
+                value = value*10 + 8;
+                number = 8;
+                document.getElementById("out").innerHTML = value;
+            });
+            document.getElementById("btn9").addEventListener("click", function()
+            {
+                value = value*10 + 9;
+                number = 9;
+                document.getElementById("out").innerHTML = value;
+            });
+            document.getElementById("btnDELETE").addEventListener("click", function()
+            {
+                value=(value-number)/10;
+                number=value%10;
+                document.getElementById("out").innerHTML = value;
+            });
+            document.getElementById("btnC").addEventListener("click", function()
+            {
+                value = 0;
+                number = 0;
+                document.getElementById("out").innerHTML = 0;
+            });
+            document.getElementById("btn-").addEventListener("click", function()
+            {
+                last_action = "-";
+                result = value;
+                number = 0;
+                value = 0;
+            });
+            document.getElementById("btn+").addEventListener("click", function()
+            {
+                last_action = "+";
+                result = value;
+                number = 0;
+                value = 0;
+            });
+            document.getElementById("btn*").addEventListener("click", function()
+            {
+                last_action = "*";
+                result = value;
+                number = 0;
+                value = 0;
+            });
+            document.getElementById("btn/").addEventListener("click", function()
+            {
+                last_action = "/";
+                result = value;
+                number = 0;
+                value = 0;
+            });
+            document.getElementById("btn=").addEventListener("click", function()
+            {
+                if(last_action=="-")
+                {
+                    result-=value;
+                }
+
+                if(last_action=="+")
+                {
+                    result+=value;
+                }
+
+                if(last_action=="*")
+                {
+                    result*=value;
+                }
+
+                if(last_action=="/")
+                {
+                    result/=value;
+                }
+
+                document.getElementById("out").innerHTML = result;
+            });
+        </script>
     </body>
 </html>
