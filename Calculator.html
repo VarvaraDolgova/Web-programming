@@ -217,6 +217,133 @@
 
                 document.getElementById("out").innerHTML = result;
             });
+
+            document.addEventListener('keydown', function(event) 
+            {
+                if(event.keyCode == 48) 
+                {
+                    value = value*10 + 0;
+                    document.getElementById("out").innerHTML = value;
+                }
+                if(event.keyCode == 49) 
+                {
+                    value = value*10 + 1;
+                    number = 1;
+                    document.getElementById("out").innerHTML = value;
+                }
+                if(event.keyCode == 50) 
+                {
+                    value = value*10 + 2;
+                    number = 2;
+                    document.getElementById("out").innerHTML = value;
+                }
+                if(event.keyCode == 51) 
+                {
+                    value = value*10 + 3;
+                    number = 3;
+                    document.getElementById("out").innerHTML = value;
+                }
+                if(event.keyCode == 52) 
+                {
+                    value = value*10 + 4;
+                    number = 4;
+                    document.getElementById("out").innerHTML = value;
+                }
+                if(event.keyCode == 53) 
+                {
+                    value = value*10 + 5;
+                    number = 5;
+                    document.getElementById("out").innerHTML = value;
+                }
+                if(event.keyCode == 54) 
+                {
+                    value = value*10 + 6;
+                    number = 6;
+                    document.getElementById("out").innerHTML = value;
+                }
+                if(event.keyCode == 55) 
+                {
+                    value = value*10 + 7;
+                    number = 7;
+                    document.getElementById("out").innerHTML = value;
+                }
+                if(event.keyCode == 56) 
+                {
+                    value = value*10 + 8;
+                    number = 8;
+                    document.getElementById("out").innerHTML = value;
+                }
+                if(event.keyCode == 57) 
+                {
+                    value = value*10 + 9;
+                    number = 9;
+                    document.getElementById("out").innerHTML = value;
+                }
+                if(event.keyCode == 8) 
+                {
+                    value=(value-number)/10;
+                    number=value%10;
+                    document.getElementById("out").innerHTML = value;
+                }
+                if(event.keyCode == 46) 
+                {
+                    value = 0;
+                    number = 0;
+                    document.getElementById("out").innerHTML = 0;
+                }
+                if(event.keyCode == 109) 
+                {
+                    last_action = "-";
+                    result = value;
+                    number = 0;
+                    value = 0;
+                }
+                if(event.keyCode == 107) 
+                {
+                    last_action = "+";
+                    result = value;
+                    number = 0;
+                    value = 0;
+                }
+                if(event.keyCode == 106) 
+                {
+                    last_action = "*";
+                    result = value;
+                    number = 0;
+                    value = 0;
+                }
+                if((event.keyCode == 111)||(event.keyCode == 191))
+                {
+                    last_action = "/";
+                    result = value;
+                    number = 0;
+                    value = 0;
+                }
+                if((event.keyCode == 187)||(event.keyCode == 13)) 
+                {
+                    if(last_action=="-")
+                    {
+                        result-=value;
+                    }
+
+                    if(last_action=="+")
+                    {
+                        result+=value;
+                    }
+
+                    if(last_action=="*")
+                    {
+                        result*=value;
+                    }
+
+                    if(last_action=="/")
+                    {
+                        result/=value;
+                    }
+
+                    document.getElementById("out").innerHTML = result;
+                }
+            });
         </script>
     </body>
 </html>
