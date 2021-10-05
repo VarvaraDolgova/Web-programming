@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Блог. Долгова Варвара</title>
+        <style>
+            body
+            {
+                background: white;
+                width: 100%;
+            }
+
+            .row:after
+            {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            .left-side
+            {
+                float: left;
+                width: 60%;
+                height: 100%;
+            }
+
+            .right-side
+            {
+                float: left;
+                width: 40%;
+                height: 100%;
+            }
+
+            .up
+            {
+                background: #d7ec98;
+                width: 100%;
+            }
+
+            .down
+            {
+                background: #d7ec98;
+                width: 100%;
+            }
+
+            p.textblock 
+            {
+                font-size: 2em;
+                color: azure;
+            }
+
+            p.text
+            {
+                font-size: 1.3em;
+                color: azure;
+            }
+
+            .textblock
+            {
+                display: block;
+                flex-direction: column;
+                margin: 10px;
+                background: #8ed2aa;
+                border-radius: 30px;
+                padding: 10px;
+            }
+
+            .ads
+            {
+                display: block;
+                flex-direction: column;
+                width: 90%;
+                background: #307a7e;
+                border-radius: 10px;
+                margin: 10px;
+                padding: 10px;
+            }
+
+            .avatar
+            {
+                border-radius: 100%;
+                width: 95%;
+            }
+
+            .ads-photo
+            {
+                border-radius: 10px;
+                width: 100%;
+            }
+
+            p.ads
+            {
+                font-size: 1.2em;
+                color: azure;
+                text-decoration: underline;
+            }
+
+            .headFoot
+            {
+                display: flex; 
+                justify-content: space-between;
+                align-items: stretch;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            p.up-down
+            {
+                font-size: 1.2em;
+                color: #307a7e;
+            }
+            
+            li
+            {
+                margin: 5px;
+            }
+
+            hr 
+            {
+                border: none; 
+                background-color: white; 
+                color: white;
+                height: 2px; 
+            }
+
+            .first-column
+            {
+                float: left;
+                width: 10%;
+                height: 100%;
+            }
+
+            .second-column
+            {
+                float: left;
+                width: 90%;
+                height: 100%;
+            }
+
+            .likes 
+            {
+                display: flex;
+                justify-content: space-around;
+                flex-flow: row wrap;
+                align-items: stretch;
+            }
+
+            .box 
+            {
+                flex-grow: 1;
+            }
+
+            .box1
+            {
+                flex-grow: 6;
+                margin-top: -20px;
+            }
+
+            .d18 
+            {
+                position: relative;
+                width: 33px; 
+                height: 26px;
+            }
+            .d18:before, 
+            .d18:after 
+            {
+                content: "";
+                position: absolute; 
+                left: 16px; 
+                top: 0;
+                width: 16px; 
+                height: 26px;
+                background: #EE4156;
+                border-radius: 16px 16px 0 0;
+                transform: rotate(-45deg); 
+                transform-origin: 0 100%;
+            }
+            .d18:after 
+            {
+                left: 0;
+                transform: rotate(45deg); 
+                transform-origin: 100% 100%;
+            }
+
+            .arrow 
+            {
+                height: 24px;
+                position: relative;
+                width: 4.8px;
+                display: inline-block;
+                margin-top: 4px;
+                background-color: rgb(221, 255, 221);
+            }   
+
+            .arrow:before 
+            {
+                content: " ";
+                width: 4.8px;
+                background-color: rgb(221, 255, 221);
+                height: 16.8px;
+                position: absolute;
+                top: -4.8px;
+                transform: rotate(50deg);
+                left: -4.8px;
+            }
+
+            .arrow:after 
+            {
+                content: " ";
+                width: 4.8px;
+                background-color: rgb(221, 255, 221);
+                height: 16.8px;
+                position: absolute;
+                top: -4.8px;
+                transform: rotate(-50deg);
+                right: -4.8px;
+            }
+
+            .half-right 
+            {
+                transform: rotate(45deg);
+            }
+
+            .d33 
+            {
+                width: 36px; 
+                height: 19.2px; 
+                margin-left: 6.24px;
+                background: #ffffff;
+                position: relative;
+                border-radius: 2.4px;
+                margin-top: -10px;
+            }
+
+            .d33:before 
+            {
+                content: "";
+                width: 0; 
+                height: 0;
+                position: absolute; 
+                right: 100%; 
+                top: calc(50% - 2.88px);
+                border-top: 2.88px solid transparent;
+                border-right: 5.76px solid #ffffff;
+                border-bottom: 2.88px solid transparent;
+            }
+        </style>
+	</head>
+	<body>
+		<div class="up">
+            <div class="headFoot">
+                <b><p class="up-down">ГЛАВНАЯ</p></b>
+                <b><p class="up-down">СООБЩЕСТВО</p></b>
+                <b><p class="up-down">ПОЛЬЗОВАТЕЛИ</p></b>
+                <b><p class="up-down">НОВОЕ</p></b>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="left-side">
+                <div class="textblock">
+                    <div class="row">
+                        <div class="first-column">
+                            <img src="https://cdn-icons-png.flaticon.com/512/168/168723.png" class="avatar"/>
+                        </div>
+                        <div class="second-column">
+                            <b><p class="textblock">последние новости</p></b>
+                            <hr>
+                            <p class="text" align="justify">недавно поучавствовал в интересном конкурсе научных работ. Познакомился с огромным количеством новых людей, а также получил незабываемые впечатления от данного мероприятия</p>
+                            <hr>
+                            <div class="likes">
+                                <div class="box"><div class="d18"></div></div>
+                                <div class="box"><div class="arrow half-right"> </div></div>
+                                <div class="box"><p><div class="d33"></div></p></div>
+                                <div class="box1"><p class="text" align="right"><u>angry__cockroach</u></p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="textblock">
+                    <div class="row">
+                        <div class="first-column">
+                            <img src="https://cdn-icons-png.flaticon.com/512/168/168723.png" class="avatar"/>
+                        </div>
+                        <div class="second-column">
+                            <b><p class="textblock">новая работа</p></b>
+                            <hr>
+                            <p class="text" align="justify">вчера поступило предложение поучавствовать в разработке крайне интересного проекта, суть которого заключается в исследовании влияния компьютерных технологий на искусство и творческую деятельность людей</p>
+                            <hr>
+                            <div class="likes">
+                                <div class="box"><div class="d18"></div></div>
+                                <div class="box"><div class="arrow half-right"> </div></div>
+                                <div class="box"><p><div class="d33"></div></p></div>
+                                <div class="box1"><p class="text" align="right"><u>angry__cockroach</u></p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <div class="ads">
+                    <img src="https://www.business.ru/images/articles/2334/1.jpg" class="ads-photo"/>
+                    <p class="ads">секрет успешного блога...</p>
+                </div>
+
+                <div class="ads">
+                    <img src="https://akket.com/wp-content/uploads/2017/10/Internet-Reklama-66.jpg" class="ads-photo"/>
+                    <p class="ads">топ-10 советов по ведению своего бизнеса...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="down">
+            <div class="headFoot">
+                <b><p class="up-down">СТАТИСТИКА</p></b>
+                <b><p class="up-down">+НОВЫЙ ПОСТ</p></b>
+                <b><p class="up-down">УВЕДОМЛЕНИЯ</p></b>
+            </div>
+        </div>
+	</body>
+</html>
